@@ -28,7 +28,8 @@
             background-image: linear-gradient(rgba(26, 36, 54, 0.3), rgba(26, 36, 54, 0.4)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 100vh; /* Fallback para navegadores antiguos */
+            height: 100dvh; /* Altura dinámica perfecta para celulares modernos */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -64,8 +65,19 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
+        /* AJUSTES ESPECÍFICOS PARA CELULARES */
         @media (max-width: 768px) {
-            .nombres { font-size: 3rem; }
+            .portada {
+                /* Sube un poco el enfoque para que la foto no se vea con tanto 'zoom' al centro */
+                background-position: center 25%; 
+            }
+            .nombres { 
+                font-size: 3rem; 
+            }
+            .mensaje { 
+                font-size: 1.1rem; 
+                padding: 0 10px; /* Evita que el texto toque los bordes de la pantalla */
+            }
         }
 
         /* --- SECCIÓN DE CUENTA REGRESIVA --- */
