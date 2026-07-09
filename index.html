@@ -28,7 +28,7 @@
             background-image: linear-gradient(rgba(26, 36, 54, 0.3), rgba(26, 36, 54, 0.4)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,8 +42,8 @@
             font-size: 4.5rem;
             margin: 0;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.9); /* Ligeramente translúcido */
-            text-shadow: 2px 2px 6px rgba(26, 36, 54, 0.4); /* Sombra más suave */
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 6px rgba(26, 36, 54, 0.4);
         }
 
         .fecha {
@@ -51,7 +51,7 @@
             letter-spacing: 5px;
             margin-top: 20px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85); /* Ligeramente translúcido */
+            color: rgba(255, 255, 255, 0.85);
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -60,21 +60,18 @@
             margin-top: 40px;
             font-style: italic;
             font-family: 'Playfair Display', serif;
-            color: rgba(197, 168, 128, 0.95); /* Champagne translúcido */
+            color: rgba(197, 168, 128, 0.95);
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Responsive: Ajustes para celulares en la portada */
         @media (max-width: 768px) {
-            .nombres {
-                font-size: 3rem;
-            }
+            .nombres { font-size: 3rem; }
         }
 
         /* --- SECCIÓN DE CUENTA REGRESIVA --- */
         .contador-seccion {
-            background-color: #F4F5F7; /* Gris muy clarito */
-            color: #1A2436; /* Letras en Azul Navy */
+            background-color: #F4F5F7;
+            color: #1A2436;
             text-align: center;
             padding: 60px 20px;
         }
@@ -84,23 +81,23 @@
             font-size: 2.5rem;
             margin-bottom: 30px;
             font-weight: 400;
-            color: #1A2436; /* Azul Navy */
+            color: #1A2436;
         }
 
         .tiempo-contenedor {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap; /* Permite que las cajas bajen en pantallas de celular */
+            flex-wrap: wrap;
         }
 
         .tiempo-caja {
-            background-color: #ffffff; /* Blanco */
+            background-color: #ffffff;
             border: 1px solid #eaeaea;
             border-radius: 8px;
             padding: 20px;
             min-width: 80px;
-            box-shadow: 0 4px 10px rgba(26, 36, 54, 0.08); /* Sombra sutil en tono navy */
+            box-shadow: 0 4px 10px rgba(26, 36, 54, 0.08);
         }
 
         .tiempo-caja span {
@@ -108,7 +105,7 @@
             font-size: 2.5rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: #C5A880; /* Tono Champagne elegante para los números */
+            color: #C5A880;
         }
 
         .tiempo-caja p {
@@ -116,7 +113,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #6c7a89; /* Gris azulado medio */
+            color: #6c7a89;
         }
 
         /* --- SECCIÓN NOSOTROS (FOTOS) --- */
@@ -145,7 +142,7 @@
             overflow: hidden;
             border-radius: 8px;
             cursor: pointer;
-            aspect-ratio: 1 / 1; /* Cuadrados perfectos */
+            aspect-ratio: 1 / 1;
             box-shadow: 0 4px 10px rgba(26, 36, 54, 0.1);
         }
 
@@ -156,16 +153,14 @@
             transition: transform 0.4s ease;
         }
 
-        .foto-container:hover .foto {
-            transform: scale(1.08);
-        }
+        .foto-container:hover .foto { transform: scale(1.08); }
 
-        /* --- LIGHTBOX (CARRUSEL DE FOTOS) --- */
+        /* --- LIGHTBOX --- */
         .lightbox {
             display: none; 
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(26, 36, 54, 0.95); /* Azul Navy translúcido */
+            background-color: rgba(26, 36, 54, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -174,7 +169,7 @@
 
         .lightbox-img {
             max-width: 90%;
-            max-height: 75vh; /* Ajustado para dar espacio al texto */
+            max-height: 75vh;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: fadeIn 0.3s ease;
@@ -194,8 +189,8 @@
 
         .lb-btn {
             position: absolute;
-            background: rgba(197, 168, 128, 0.8); /* Champagne */
-            color: #1A2436; /* Navy */
+            background: rgba(197, 168, 128, 0.8);
+            color: #1A2436;
             border: none;
             border-radius: 50%;
             width: 50px; height: 50px;
@@ -205,11 +200,7 @@
             transition: transform 0.2s, background 0.2s;
         }
 
-        .lb-btn:hover {
-            transform: scale(1.1);
-            background: #d4af37;
-        }
-
+        .lb-btn:hover { transform: scale(1.1); background: #d4af37; }
         .lb-close { top: 20px; right: 30px; background: transparent; color: #fff; font-size: 3rem; box-shadow: none; width: auto;}
         .lb-close:hover { background: transparent; color: #C5A880; transform: scale(1.1); }
         .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
@@ -222,7 +213,7 @@
 
         /* --- SECCIÓN DE ITINERARIO Y UBICACIÓN --- */
         .itinerario-seccion {
-            background-color: #F4F5F7; /* Gris claro */
+            background-color: #F4F5F7;
             text-align: center;
             padding: 80px 20px;
         }
@@ -232,7 +223,7 @@
             font-size: 2.5rem;
             margin-bottom: 50px;
             font-weight: 400;
-            color: #1A2436; /* Azul Navy */
+            color: #1A2436;
         }
 
         .tarjetas-contenedor {
@@ -245,8 +236,8 @@
         }
 
         .tarjeta {
-            background-color: #ffffff; /* Blanco */
-            border-top: 4px solid #C5A880; /* Detalle superior en Champagne */
+            background-color: #ffffff;
+            border-top: 4px solid #C5A880;
             border-radius: 8px;
             padding: 40px 30px;
             flex: 1;
@@ -254,30 +245,10 @@
             box-shadow: 0 10px 30px rgba(26, 36, 54, 0.05);
         }
 
-        .tarjeta .icono {
-            font-size: 3rem;
-            color: #C5A880; /* Champagne */
-            margin-bottom: 15px;
-        }
-
-        .tarjeta h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #1A2436; /* Azul Navy */
-            margin: 0 0 15px 0;
-        }
-
-        .tarjeta p {
-            color: #4a5568;
-            margin: 8px 0;
-            line-height: 1.5;
-        }
-
-        .tarjeta .hora {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #1A2436;
-        }
+        .tarjeta .icono { font-size: 3rem; color: #C5A880; margin-bottom: 15px; }
+        .tarjeta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #1A2436; margin: 0 0 15px 0; }
+        .tarjeta p { color: #4a5568; margin: 8px 0; line-height: 1.5; }
+        .tarjeta .hora { font-weight: 600; font-size: 1.2rem; color: #1A2436; }
         
         .indicaciones {
             margin-top: 20px;
@@ -287,12 +258,11 @@
             color: #666;
         }
 
-        /* Botón de Google Maps */
         .btn-mapa {
             display: inline-block;
             margin-top: 25px;
             padding: 12px 25px;
-            background-color: #1A2436; /* Azul Navy */
+            background-color: #1A2436;
             color: #ffffff;
             text-decoration: none;
             border-radius: 30px;
@@ -303,67 +273,30 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .btn-mapa:hover {
-            background-color: #C5A880;
-            box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4);
-        }
+        .btn-mapa:hover { background-color: #C5A880; box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4); }
 
-        /* --- SECCIÓN REGALOS (Lluvia de Sobres) --- */
+        /* --- SECCIÓN REGALOS --- */
         .regalos-seccion {
             background-color: #ffffff;
             text-align: center;
             padding: 80px 20px;
         }
 
-        .regalos-seccion h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #1A2436;
-        }
+        .regalos-seccion h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: #1A2436; }
+        .icono-regalo { font-size: 3rem; color: #C5A880; margin-bottom: 15px; }
+        .mensaje-regalo { max-width: 600px; margin: 0 auto; color: #4a5568; line-height: 1.6; font-size: 1.1rem; }
 
-        .icono-regalo {
-            font-size: 3rem;
-            color: #C5A880;
-            margin-bottom: 15px;
-        }
-
-        .mensaje-regalo {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #4a5568;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-
-        /* --- SECCIÓN RSVP (Confirmación) --- */
+        /* --- SECCIÓN RSVP --- */
         .rsvp-seccion {
-            background-color: #1A2436; /* Azul Navy */
+            background-color: #1A2436;
             color: #ffffff;
             text-align: center;
             padding: 80px 20px;
         }
 
-        .rsvp-seccion h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 400;
-            color: #C5A880; /* Champagne */
-        }
-        
-        .rsvp-greeting {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-
-        .rsvp-seccion p {
-            margin-bottom: 40px;
-            color: #eaeaea;
-        }
+        .rsvp-seccion h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; font-weight: 400; color: #C5A880; }
+        .rsvp-greeting { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 10px; font-style: italic; }
+        .rsvp-seccion p { margin-bottom: 40px; color: #eaeaea; }
 
         .rsvp-formulario {
             max-width: 500px;
@@ -371,137 +304,61 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            background-color: #2c394f; /* Fondo ligeramente más claro que el navy */
+            background-color: #2c394f;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border-top: 4px solid #C5A880;
         }
 
-        .grupo-input {
-            text-align: left;
-        }
-
-        .grupo-input label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #F4F5F7;
-        }
-
+        .grupo-input { text-align: left; }
+        .grupo-input label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; color: #F4F5F7; }
         .grupo-input input, .grupo-input select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #4a5568;
-            border-radius: 4px;
-            background-color: #ffffff;
-            color: #333;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            box-sizing: border-box;
+            width: 100%; padding: 12px; border: 1px solid #4a5568; border-radius: 4px; background-color: #ffffff; color: #333; font-family: 'Montserrat', sans-serif; font-size: 1rem; box-sizing: border-box;
         }
-        
-        .grupo-input input[readonly] {
-            cursor: not-allowed;
-            border-color: #2c394f;
-        }
+        .grupo-input input[readonly] { cursor: not-allowed; border-color: #2c394f; }
 
         .btn-confirmar {
-            margin-top: 10px;
-            padding: 15px;
-            background-color: #C5A880; /* Champagne */
-            color: #1A2436; /* Azul Navy */
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px; padding: 15px; background-color: #C5A880; color: #1A2436; border: none; border-radius: 4px; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;
         }
+        .btn-confirmar:hover { background-color: #d4af37; transform: translateY(-2px); }
 
-        .btn-confirmar:hover {
-            background-color: #d4af37;
-            transform: translateY(-2px);
-        }
-
-        /* --- BOTÓN FLOTANTE DE MÚSICA --- */
         .btn-musica {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #C5A880;
-            color: #1A2436;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            border: none;
-            transition: transform 0.3s ease;
+            position: fixed; bottom: 30px; right: 30px; background-color: #C5A880; color: #1A2436; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; border: none; transition: transform 0.3s ease;
         }
-
-        .btn-musica:hover {
-            transform: scale(1.1);
-        }
+        .btn-musica:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
-    <!-- Elemento de Audio -->
     <audio id="musica-fondo" loop>
         <source src="una-cancion-de-amor-camilo.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Botón flotante para prender/apagar la música -->
     <button class="btn-musica" onclick="toggleMusica()" id="btn-musica-flotante">
         <span class="material-icons" id="icono-musica">music_off</span>
     </button>
 
-    <!-- Sección 1: Portada -->
     <header class="portada">
         <h1 class="nombres">Jhon & Gabriela</h1>
         <p class="fecha">24 de Octubre de 2026</p>
         <p class="mensaje">¡Nos casamos y queremos celebrarlo con ustedes!</p>
     </header>
 
-    <!-- Sección 2: Cuenta Regresiva -->
     <section class="contador-seccion">
         <h2>Ya falta poco...</h2>
         <div class="tiempo-contenedor">
-            <div class="tiempo-caja">
-                <span id="dias">00</span>
-                <p>Días</p>
-            </div>
-            <div class="tiempo-caja">
-                <span id="horas">00</span>
-                <p>Hrs</p>
-            </div>
-            <div class="tiempo-caja">
-                <span id="minutos">00</span>
-                <p>Min</p>
-            </div>
-            <div class="tiempo-caja">
-                <span id="segundos">00</span>
-                <p>Seg</p>
-            </div>
+            <div class="tiempo-caja"><span id="dias">00</span><p>Días</p></div>
+            <div class="tiempo-caja"><span id="horas">00</span><p>Hrs</p></div>
+            <div class="tiempo-caja"><span id="minutos">00</span><p>Min</p></div>
+            <div class="tiempo-caja"><span id="segundos">00</span><p>Seg</p></div>
         </div>
     </section>
 
-    <!-- Sección 3: Nosotros (Fotos) -->
     <section class="nosotros-seccion">
         <h2>Nuestro Amor</h2>
-        <div class="galeria" id="galeria-fotos">
-        </div>
+        <div class="galeria" id="galeria-fotos"></div>
     </section>
 
-    <!-- Modal Lightbox (El Carrusel Oculto) -->
     <div class="lightbox" id="lightbox">
         <button class="lb-btn lb-close" onclick="cerrarLightbox()">&times;</button>
         <button class="lb-btn lb-prev" onclick="cambiarFoto(-1)">&#10094;</button>
@@ -510,9 +367,7 @@
         <button class="lb-btn lb-next" onclick="cambiarFoto(1)">&#10095;</button>
     </div>
 
-    <!-- Sección 4: Dónde y Cuándo -->
     <section class="itinerario-seccion">
-        
         <div class="tarjetas-contenedor">
             <div class="tarjeta">
                 <span class="material-icons icono">favorite_border</span>
@@ -520,18 +375,15 @@
                 <p class="hora">5:00 p.m.</p>
                 <p><strong>Dirección:</strong></p>
                 <p>Jr. La Punta 275<br>Sol de La Molina, La Molina</p>
-                
                 <div class="indicaciones">
                     <p><strong>⏳ Duración:</strong> Hasta la 1:00 AM (Por disposiciones municipales)</p>
                     <p><strong>🚗 Estacionamiento:</strong> Contamos con parqueo externo (No hay cochera interna disponible).</p>
                 </div>
-
                 <a href="https://www.google.com/maps/place/Jr.+la+Punta+275,+La+Molina+15026/@-12.0871552,-76.9017487,18z/data=!4m6!3m5!1s0x9105c0dc7cb41585:0xef0446a5578e4a97!8m2!3d-12.0874321!4d-76.9002164!16s%2Fg%2F11h_44ny1w?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" class="btn-mapa" target="_blank">Ver ubicación en el Mapa</a>
             </div>
         </div>
     </section>
 
-    <!-- Sección 5: Regalos (Lluvia de Sobres) -->
     <section class="regalos-seccion">
         <span class="material-icons icono-regalo">mail_outline</span>
         <h2>Lluvia de Sobres</h2>
@@ -541,7 +393,6 @@
         </p>
     </section>
 
-    <!-- Sección 6: RSVP (Confirmación de asistencia) -->
     <section class="rsvp-seccion">
         <h2>Confirmación de Asistencia</h2>
         <div id="saludo-personalizado" class="rsvp-greeting"></div>
@@ -565,7 +416,6 @@
             <div class="grupo-input">
                 <label for="personas">Número de personas (Incluyéndote)</label>
                 <select id="personas" name="personas" required>
-                    <!-- Las opciones se generarán por JavaScript según el link -->
                 </select>
             </div>
 
@@ -575,12 +425,11 @@
 
     <script>
         // --- 1. LÓGICA DE LA CUENTA REGRESIVA ---
-        const fechaBoda = new Date("Oct 24, 2026 17:00:00").getTime(); // 5:00 p.m.
+        const fechaBoda = new Date("Oct 24, 2026 17:00:00").getTime();
 
         const actualizador = setInterval(function() {
             const ahora = new Date().getTime();
             const distancia = fechaBoda - ahora;
-
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
@@ -601,7 +450,6 @@
         function toggleMusica() {
             const musica = document.getElementById('musica-fondo');
             const icono = document.getElementById('icono-musica');
-            
             if (musica.paused) {
                 musica.play();
                 icono.innerText = 'music_note';
@@ -611,29 +459,27 @@
             }
         }
 
-        // --- 3. LÓGICA DE LA GALERÍA Y CARRUSEL ALEATORIO CON TEXTOS ---
+        // --- 3. LÓGICA DE LA GALERÍA ---
         const listaFotos = [];
         for(let i = 1; i <= 12; i++) {
-            listaFotos.push(`foto${i}.jpeg`);
+            listaFotos.push(`foto${i}.JPEG`); // Carga .JPEG
         }
 
-        // Diccionario de textos cursis y elegantes para cada foto
         const textosFotos = {
-            'foto1.jpeg': 'El día que nuestras almas dijeron ¡Sí! 💍✨',
-            'foto2.jpeg': 'Nuestras primeras salidas, donde comenzó la magia ☕💫',
-            'foto3.jpeg': 'La promesa de un para siempre juntos 💍💖',
-            'foto4.jpeg': 'Nuestro primer viaje, el inicio de mil aventuras ✈️🌍',
-            'foto5.jpeg': 'Una escapada para bailar al ritmo de nuestro amor 💃🕺',
-            'foto6.jpeg': 'Compartiendo momentos en nuestra casa de estudios 🎓📚',
-            'foto7.jpeg': 'El día que nuestras almas dijeron ¡Sí! x2 ✨🥂',
-            'foto8.jpeg': 'Compartiendo momentos 🧳✈️',
-            'foto9.jpeg': 'El lugar que nos vio unir nuestros caminos 🏛️❤️',
-            'foto10.jpeg': 'Bailando juntos como si no hubiera un mañana 🎶✨',
-            'foto11.jpeg': 'Tardes de películas, abrazos y nuestro propio mundo 🍿🎬',
-            'foto12.jpeg': 'Nuestra primera semana escribiendo nuestro felices por siempre 🏡💍'
+            'foto1.JPEG': '¡El día que dijimos sí! 💍',
+            'foto2.JPEG': 'De nuestras primeras salidas ☕❤️',
+            'foto3.JPEG': 'Nuestro compromiso 💍✨',
+            'foto4.JPEG': 'Nuestro primer viaje juntos ✈️🌍',
+            'foto5.JPEG': 'Una escapada a bailar 💃🕺',
+            'foto6.JPEG': 'Momentos en nuestra casa de estudios 🎓📚',
+            'foto7.JPEG': '¡El día que dijimos sí x2! ✨🥂',
+            'foto8.JPEG': 'Previas a viajar 🧳✈️',
+            'foto9.JPEG': 'Momentos en nuestra casa de estudios x2 🏛️❤️',
+            'foto10.JPEG': 'Otra escapada a bailar 🎶✨',
+            'foto11.JPEG': 'Día de películas 🍿🎬',
+            'foto12.JPEG': 'Nuestra primera semana de casados 🏡💍'
         };
 
-        // Mezclar las fotos
         for (let i = listaFotos.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [listaFotos[i], listaFotos[j]] = [listaFotos[j], listaFotos[i]];
@@ -642,17 +488,14 @@
         const galeria = document.getElementById('galeria-fotos');
         let fotoActualIndex = 0;
 
-        // Renderizar fotos en la cuadrícula
         listaFotos.forEach((src, index) => {
             const div = document.createElement('div');
             div.className = 'foto-container';
             div.onclick = () => abrirLightbox(index);
-            
             const img = document.createElement('img');
             img.src = src;
             img.alt = `Jhon & Gabriela foto ${index + 1}`;
             img.className = 'foto';
-
             div.appendChild(img);
             galeria.appendChild(div);
         });
@@ -663,20 +506,17 @@
 
         function actualizarTextoFoto() {
             const nombreArchivoActual = listaFotos[fotoActualIndex];
-            // Si encuentra el texto lo pone, si no, pone un texto por defecto
             lightboxCaption.innerText = textosFotos[nombreArchivoActual] || 'Un hermoso recuerdo juntos ❤️';
         }
 
         function abrirLightbox(index) {
             fotoActualIndex = index;
             lightboxImg.src = listaFotos[fotoActualIndex];
-            actualizarTextoFoto(); // Ponemos el texto de esta foto
+            actualizarTextoFoto();
             lightbox.style.display = 'flex';
         }
 
-        function cerrarLightbox() {
-            lightbox.style.display = 'none';
-        }
+        function cerrarLightbox() { lightbox.style.display = 'none'; }
 
         function cambiarFoto(direccion) {
             lightboxImg.style.animation = 'none';
@@ -685,13 +525,11 @@
                 lightboxImg.style.animation = 'fadeIn 0.3s ease';
                 lightboxCaption.style.animation = 'fadeIn 0.3s ease';
             }, 10);
-            
             fotoActualIndex += direccion;
             if (fotoActualIndex >= listaFotos.length) fotoActualIndex = 0;
             if (fotoActualIndex < 0) fotoActualIndex = listaFotos.length - 1;
-            
             lightboxImg.src = listaFotos[fotoActualIndex];
-            actualizarTextoFoto(); // Actualizamos el texto para la nueva foto
+            actualizarTextoFoto();
         }
 
         document.addEventListener('keydown', function(event) {
@@ -702,25 +540,20 @@
             }
         });
 
-        // --- 4. LÓGICA DEL FORMULARIO Y LINKS PERSONALIZADOS ---
-        
-        // Leemos la dirección URL de la página
+        // --- 4. LÓGICA DEL FORMULARIO HACIA WHATSAPP ---
         const parametrosURL = new URLSearchParams(window.location.search);
         const nombreInvitado = parametrosURL.get('invitado'); 
-        const numeroPases = parametrosURL.get('pases') || 4; // Si no hay pases en el link, por defecto permite hasta 4
+        const numeroPases = parametrosURL.get('pases') || 4;
 
-        // Si el link trae nombre de invitado, personalizamos la web
         if (nombreInvitado) {
             document.getElementById('saludo-personalizado').innerText = `¡Hola ${nombreInvitado}!`;
-            
             const campoNombre = document.getElementById('nombre');
-            campoNombre.value = nombreInvitado; // Llenamos el nombre
-            campoNombre.readOnly = true; // Lo bloqueamos
-            campoNombre.style.backgroundColor = '#e0e0e0'; // Color de bloqueado
+            campoNombre.value = nombreInvitado;
+            campoNombre.readOnly = true;
+            campoNombre.style.backgroundColor = '#e0e0e0';
             campoNombre.style.color = '#666666';
         }
 
-        // Llenamos la lista desplegable de personas según los pases permitidos
         const selectorPersonas = document.getElementById('personas');
         for (let i = 1; i <= numeroPases; i++) {
             const opcion = document.createElement('option');
@@ -729,16 +562,40 @@
             selectorPersonas.appendChild(opcion);
         }
 
-        // Acción al enviar el formulario
+        // ACCIÓN PARA ABRIR WHATSAPP
         function confirmarAsistencia(event) {
-            event.preventDefault();
-            const form = document.getElementById('formulario-boda');
+            event.preventDefault(); // Evita que la página se recargue
+
+            // 1. Obtenemos los datos que llenó el invitado
+            const nombre = document.getElementById('nombre').value;
+            const asistencia = document.getElementById('asistencia').value;
+            const personas = document.getElementById('personas').value;
             
+            // ---> AQUÍ PONES TU NÚMERO DE TELÉFONO <---
+            // Formato: Código de país (ej. 51 para Perú) seguido de tu número, sin el símbolo + y sin espacios
+            const telefono = "51930851896"; 
+            
+            // 2. Preparamos el mensaje
+            let mensaje = "";
+            if (asistencia === "si") {
+                mensaje = `¡Hola Jhon y Gabriela! 🎉 Soy *${nombre}* y quería confirmar nuestra asistencia a su boda. Seremos *${personas}* persona(s). ¡Qué emoción!`;
+            } else {
+                mensaje = `¡Hola Jhon y Gabriela! 😔 Soy *${nombre}*. Lamentablemente no podremos asistir a la boda. ¡Les deseamos lo mejor en su gran día!`;
+            }
+            
+            // 3. Creamos el link de WhatsApp
+            const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            
+            // 4. Abrimos WhatsApp en una pestaña nueva
+            window.open(urlWhatsApp, '_blank');
+            
+            // 5. Mostramos un mensaje bonito en la web diciendo que ya se envió
+            const form = document.getElementById('formulario-boda');
             form.innerHTML = `
                 <div style="text-align: center; padding: 20px 0;">
-                    <span class="material-icons" style="font-size: 4rem; color: #C5A880; margin-bottom: 15px;">check_circle</span>
-                    <h3 style="color: #C5A880; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0;">¡Gracias por confirmar!</h3>
-                    <p style="color: #ffffff; margin-top: 15px; font-size: 1.1rem; line-height: 1.5;">Hemos registrado tu respuesta. <br>Nos hace muy felices compartir este día con ustedes.</p>
+                    <span class="material-icons" style="font-size: 4rem; color: #C5A880; margin-bottom: 15px;">send</span>
+                    <h3 style="color: #C5A880; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0;">¡Enviando confirmación!</h3>
+                    <p style="color: #ffffff; margin-top: 15px; font-size: 1.1rem; line-height: 1.5;">Se está abriendo tu WhatsApp para enviarnos tu respuesta directamente.</p>
                 </div>
             `;
         }
