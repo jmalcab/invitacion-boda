@@ -27,9 +27,10 @@
             /* Imagen de fondo con filtro suave para que resalte más la foto */
             background-image: linear-gradient(rgba(26, 36, 54, 0.3), rgba(26, 36, 54, 0.4)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop');
             background-size: cover;
-            background-position: center;
-            height: 100vh; /* Fallback para navegadores antiguos */
-            height: 100dvh; /* Altura dinámica perfecta para celulares modernos */
+            /* background-position para centrar mejor en móviles */
+            background-position: center 25%;
+            /* 100dvh es especial para que se vea perfecto en celulares modernos */
+            height: 100dvh; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -65,18 +66,10 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* AJUSTES ESPECÍFICOS PARA CELULARES */
+        /* Responsive: Ajustes para celulares en la portada */
         @media (max-width: 768px) {
-            .portada {
-                /* Sube un poco el enfoque para que la foto no se vea con tanto 'zoom' al centro */
-                background-position: center 25%; 
-            }
-            .nombres { 
-                font-size: 3rem; 
-            }
-            .mensaje { 
-                font-size: 1.1rem; 
-                padding: 0 10px; /* Evita que el texto toque los bordes de la pantalla */
+            .nombres {
+                font-size: 3rem;
             }
         }
 
@@ -165,9 +158,11 @@
             transition: transform 0.4s ease;
         }
 
-        .foto-container:hover .foto { transform: scale(1.08); }
+        .foto-container:hover .foto {
+            transform: scale(1.08);
+        }
 
-        /* --- LIGHTBOX --- */
+        /* --- LIGHTBOX (CARRUSEL DE FOTOS) --- */
         .lightbox {
             display: none; 
             position: fixed;
@@ -212,7 +207,11 @@
             transition: transform 0.2s, background 0.2s;
         }
 
-        .lb-btn:hover { transform: scale(1.1); background: #d4af37; }
+        .lb-btn:hover {
+            transform: scale(1.1);
+            background: #d4af37;
+        }
+
         .lb-close { top: 20px; right: 30px; background: transparent; color: #fff; font-size: 3rem; box-shadow: none; width: auto;}
         .lb-close:hover { background: transparent; color: #C5A880; transform: scale(1.1); }
         .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
@@ -257,10 +256,30 @@
             box-shadow: 0 10px 30px rgba(26, 36, 54, 0.05);
         }
 
-        .tarjeta .icono { font-size: 3rem; color: #C5A880; margin-bottom: 15px; }
-        .tarjeta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #1A2436; margin: 0 0 15px 0; }
-        .tarjeta p { color: #4a5568; margin: 8px 0; line-height: 1.5; }
-        .tarjeta .hora { font-weight: 600; font-size: 1.2rem; color: #1A2436; }
+        .tarjeta .icono {
+            font-size: 3rem;
+            color: #C5A880;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1A2436;
+            margin: 0 0 15px 0;
+        }
+
+        .tarjeta p {
+            color: #4a5568;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .tarjeta .hora {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #1A2436;
+        }
         
         .indicaciones {
             margin-top: 20px;
@@ -285,20 +304,40 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .btn-mapa:hover { background-color: #C5A880; box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4); }
+        .btn-mapa:hover {
+            background-color: #C5A880;
+            box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4);
+        }
 
-        /* --- SECCIÓN REGALOS --- */
+        /* --- SECCIÓN REGALOS (Lluvia de Sobres) --- */
         .regalos-seccion {
             background-color: #ffffff;
             text-align: center;
             padding: 80px 20px;
         }
 
-        .regalos-seccion h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: #1A2436; }
-        .icono-regalo { font-size: 3rem; color: #C5A880; margin-bottom: 15px; }
-        .mensaje-regalo { max-width: 600px; margin: 0 auto; color: #4a5568; line-height: 1.6; font-size: 1.1rem; }
+        .regalos-seccion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1A2436;
+        }
 
-        /* --- SECCIÓN RSVP --- */
+        .icono-regalo {
+            font-size: 3rem;
+            color: #C5A880;
+            margin-bottom: 15px;
+        }
+
+        .mensaje-regalo {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* --- SECCIÓN RSVP (Confirmación) --- */
         .rsvp-seccion {
             background-color: #1A2436;
             color: #ffffff;
@@ -306,9 +345,26 @@
             padding: 80px 20px;
         }
 
-        .rsvp-seccion h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; font-weight: 400; color: #C5A880; }
-        .rsvp-greeting { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 10px; font-style: italic; }
-        .rsvp-seccion p { margin-bottom: 40px; color: #eaeaea; }
+        .rsvp-seccion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #C5A880;
+        }
+        
+        .rsvp-greeting {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .rsvp-seccion p {
+            margin-bottom: 40px;
+            color: #eaeaea;
+        }
 
         .rsvp-formulario {
             max-width: 500px;
@@ -323,25 +379,99 @@
             border-top: 4px solid #C5A880;
         }
 
-        .grupo-input { text-align: left; }
-        .grupo-input label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; color: #F4F5F7; }
-        .grupo-input input, .grupo-input select {
-            width: 100%; padding: 12px; border: 1px solid #4a5568; border-radius: 4px; background-color: #ffffff; color: #333; font-family: 'Montserrat', sans-serif; font-size: 1rem; box-sizing: border-box;
+        .grupo-input {
+            text-align: left;
         }
-        .grupo-input input[readonly] { cursor: not-allowed; border-color: #2c394f; }
+
+        .grupo-input label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #F4F5F7;
+        }
+
+        .grupo-input input, .grupo-input select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        .grupo-input input[readonly] {
+            cursor: not-allowed;
+            border-color: #2c394f;
+        }
 
         .btn-confirmar {
-            margin-top: 10px; padding: 15px; background-color: #C5A880; color: #1A2436; border: none; border-radius: 4px; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
-        .btn-confirmar:hover { background-color: #d4af37; transform: translateY(-2px); }
 
-        .btn-musica {
-            position: fixed; bottom: 30px; right: 30px; background-color: #C5A880; color: #1A2436; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; border: none; transition: transform 0.3s ease;
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
         }
-        .btn-musica:hover { transform: scale(1.1); }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .btn-correo {
+            background-color: #C5A880;
+            color: #1A2436;
+        }
+
+        .btn-correo:hover {
+            background-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        /* --- BOTÓN FLOTANTE DE MÚSICA --- */
+        .btn-musica {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #C5A880;
+            color: #1A2436;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-musica:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+    <!-- Elemento de Audio -->
     <audio id="musica-fondo" loop>
         <source src="una-cancion-de-amor-camilo.mp3" type="audio/mpeg">
     </audio>
@@ -350,27 +480,43 @@
         <span class="material-icons" id="icono-musica">music_off</span>
     </button>
 
+    <!-- Sección 1: Portada -->
     <header class="portada">
         <h1 class="nombres">Jhon & Gabriela</h1>
         <p class="fecha">24 de Octubre de 2026</p>
         <p class="mensaje">¡Nos casamos y queremos celebrarlo con ustedes!</p>
     </header>
 
+    <!-- Sección 2: Cuenta Regresiva -->
     <section class="contador-seccion">
         <h2>Ya falta poco...</h2>
         <div class="tiempo-contenedor">
-            <div class="tiempo-caja"><span id="dias">00</span><p>Días</p></div>
-            <div class="tiempo-caja"><span id="horas">00</span><p>Hrs</p></div>
-            <div class="tiempo-caja"><span id="minutos">00</span><p>Min</p></div>
-            <div class="tiempo-caja"><span id="segundos">00</span><p>Seg</p></div>
+            <div class="tiempo-caja">
+                <span id="dias">00</span>
+                <p>Días</p>
+            </div>
+            <div class="tiempo-caja">
+                <span id="horas">00</span>
+                <p>Hrs</p>
+            </div>
+            <div class="tiempo-caja">
+                <span id="minutos">00</span>
+                <p>Min</p>
+            </div>
+            <div class="tiempo-caja">
+                <span id="segundos">00</span>
+                <p>Seg</p>
+            </div>
         </div>
     </section>
 
+    <!-- Sección 3: Nosotros (Fotos) -->
     <section class="nosotros-seccion">
         <h2>Nuestro Amor</h2>
         <div class="galeria" id="galeria-fotos"></div>
     </section>
 
+    <!-- Modal Lightbox (El Carrusel Oculto) -->
     <div class="lightbox" id="lightbox">
         <button class="lb-btn lb-close" onclick="cerrarLightbox()">&times;</button>
         <button class="lb-btn lb-prev" onclick="cambiarFoto(-1)">&#10094;</button>
@@ -379,6 +525,7 @@
         <button class="lb-btn lb-next" onclick="cambiarFoto(1)">&#10095;</button>
     </div>
 
+    <!-- Sección 4: Dónde y Cuándo -->
     <section class="itinerario-seccion">
         <div class="tarjetas-contenedor">
             <div class="tarjeta">
@@ -387,15 +534,18 @@
                 <p class="hora">5:00 p.m.</p>
                 <p><strong>Dirección:</strong></p>
                 <p>Jr. La Punta 275<br>Sol de La Molina, La Molina</p>
+                
                 <div class="indicaciones">
                     <p><strong>⏳ Duración:</strong> Hasta la 1:00 AM (Por disposiciones municipales)</p>
                     <p><strong>🚗 Estacionamiento:</strong> Contamos con parqueo externo (No hay cochera interna disponible).</p>
                 </div>
+
                 <a href="https://www.google.com/maps/place/Jr.+la+Punta+275,+La+Molina+15026/@-12.0871552,-76.9017487,18z/data=!4m6!3m5!1s0x9105c0dc7cb41585:0xef0446a5578e4a97!8m2!3d-12.0874321!4d-76.9002164!16s%2Fg%2F11h_44ny1w?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" class="btn-mapa" target="_blank">Ver ubicación en el Mapa</a>
             </div>
         </div>
     </section>
 
+    <!-- Sección 5: Regalos (Lluvia de Sobres) -->
     <section class="regalos-seccion">
         <span class="material-icons icono-regalo">mail_outline</span>
         <h2>Lluvia de Sobres</h2>
@@ -405,12 +555,21 @@
         </p>
     </section>
 
+    <!-- Sección 6: RSVP (Confirmación de asistencia) -->
     <section class="rsvp-seccion">
         <h2>Confirmación de Asistencia</h2>
         <div id="saludo-personalizado" class="rsvp-greeting"></div>
-        <p>Por favor, confírmanos tu presencia antes del 24 de Septiembre.</p>
+        <p>Por favor, confírmanos tu presencia antes del 15 de Septiembre.</p>
         
-        <form class="rsvp-formulario" id="formulario-boda" onsubmit="confirmarAsistencia(event)">
+        <!-- IMPORTANTE: Aquí se usa FormSubmit. Reemplaza "tu_correo@gmail.com" por tu correo real -->
+        <form class="rsvp-formulario" id="formulario-boda" action="https://formsubmit.co/jhonmalcab@gmail.com" method="POST">
+            
+            <!-- Configuraciones ocultas de FormSubmit -->
+            <input type="hidden" name="_subject" value="¡Nueva Confirmación de Boda!">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Esta línea hace que la página vuelva al inicio después de enviar el correo -->
+            <input type="hidden" name="_next" value="https://jmalcab.github.io/invitacion-boda/">
+
             <div class="grupo-input">
                 <label for="nombre">Nombre y Apellido</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ej. Familia Pérez o Juan Pérez" required>
@@ -428,10 +587,21 @@
             <div class="grupo-input">
                 <label for="personas">Número de personas (Incluyéndote)</label>
                 <select id="personas" name="personas" required>
+                    <!-- Opciones generadas por JS -->
                 </select>
             </div>
 
-            <button type="submit" class="btn-confirmar">Confirmar Asistencia</button>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                <!-- Botón 1: WhatsApp -->
+                <button type="button" class="btn-confirmar btn-whatsapp" onclick="confirmarPorWhatsApp(event)">
+                    <span class="material-icons">chat</span> Confirmar por WhatsApp
+                </button>
+                
+                <!-- Botón 2: Correo Electrónico (Por defecto del Form) -->
+                <button type="submit" class="btn-confirmar btn-correo">
+                    <span class="material-icons">email</span> Confirmar por Correo
+                </button>
+            </div>
         </form>
     </section>
 
@@ -442,6 +612,7 @@
         const actualizador = setInterval(function() {
             const ahora = new Date().getTime();
             const distancia = fechaBoda - ahora;
+
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
@@ -462,6 +633,7 @@
         function toggleMusica() {
             const musica = document.getElementById('musica-fondo');
             const icono = document.getElementById('icono-musica');
+            
             if (musica.paused) {
                 musica.play();
                 icono.innerText = 'music_note';
@@ -474,22 +646,22 @@
         // --- 3. LÓGICA DE LA GALERÍA ---
         const listaFotos = [];
         for(let i = 1; i <= 12; i++) {
-            listaFotos.push(`foto${i}.jpeg`); // Carga .jpeg
+            listaFotos.push(`foto${i}.jpeg`);
         }
 
         const textosFotos = {
-            'foto1.jpeg': '¡El día que dijimos sí! 💍',
-            'foto2.jpeg': 'De nuestras primeras salidas ☕❤️',
-            'foto3.jpeg': 'Nuestro compromiso 💍✨',
-            'foto4.jpeg': 'Nuestro primer viaje juntos ✈️🌍',
-            'foto5.jpeg': 'Una escapada a bailar 💃🕺',
-            'foto6.jpeg': 'Momentos en nuestra casa de estudios 🎓📚',
-            'foto7.jpeg': '¡El día que dijimos sí x2! ✨🥂',
-            'foto8.jpeg': 'Previas a viajar 🧳✈️',
-            'foto9.jpeg': 'Momentos en nuestra casa de estudios x2 🏛️❤️',
-            'foto10.jpeg': 'Otra escapada a bailar 🎶✨',
-            'foto11.jpeg': 'Día de películas 🍿🎬',
-            'foto12.jpeg': 'Nuestra primera semana de casados 🏡💍'
+            'foto1.jpeg': 'El día que nuestras almas dijeron ¡Sí! 💍✨',
+            'foto2.jpeg': 'Nuestras primeras salidas, donde comenzó la magia ☕💫',
+            'foto3.jpeg': 'La promesa de un para siempre juntos 💍💖',
+            'foto4.jpeg': 'Nuestro primer viaje, el inicio de mil aventuras ✈️🌍',
+            'foto5.jpeg': 'Una escapada para bailar al ritmo de nuestro amor 💃🕺',
+            'foto6.jpeg': 'Donde aprendimos, crecimos y nos enamoramos 🎓📚',
+            'foto7.jpeg': '¡Reafirmando nuestro amor una vez más! ✨🥂',
+            'foto8.jpeg': 'La emoción antes de volar hacia nuevos recuerdos 🧳✈️',
+            'foto9.jpeg': 'El lugar que nos vio unir nuestros caminos 🏛️❤️',
+            'foto10.jpeg': 'Bailando juntos como si no hubiera un mañana 🎶✨',
+            'foto11.jpeg': 'Tardes de películas, abrazos y nuestro propio mundo 🍿🎬',
+            'foto12.jpeg': 'Nuestra primera semana escribiendo nuestro felices por siempre 🏡💍'
         };
 
         for (let i = listaFotos.length - 1; i > 0; i--) {
@@ -528,7 +700,9 @@
             lightbox.style.display = 'flex';
         }
 
-        function cerrarLightbox() { lightbox.style.display = 'none'; }
+        function cerrarLightbox() {
+            lightbox.style.display = 'none';
+        }
 
         function cambiarFoto(direccion) {
             lightboxImg.style.animation = 'none';
@@ -537,9 +711,11 @@
                 lightboxImg.style.animation = 'fadeIn 0.3s ease';
                 lightboxCaption.style.animation = 'fadeIn 0.3s ease';
             }, 10);
+            
             fotoActualIndex += direccion;
             if (fotoActualIndex >= listaFotos.length) fotoActualIndex = 0;
             if (fotoActualIndex < 0) fotoActualIndex = listaFotos.length - 1;
+            
             lightboxImg.src = listaFotos[fotoActualIndex];
             actualizarTextoFoto();
         }
@@ -552,7 +728,7 @@
             }
         });
 
-        // --- 4. LÓGICA DEL FORMULARIO HACIA WHATSAPP ---
+        // --- 4. LÓGICA DEL FORMULARIO ---
         const parametrosURL = new URLSearchParams(window.location.search);
         const nombreInvitado = parametrosURL.get('invitado'); 
         const numeroPases = parametrosURL.get('pases') || 4;
@@ -574,20 +750,23 @@
             selectorPersonas.appendChild(opcion);
         }
 
-        // ACCIÓN PARA ABRIR WHATSAPP
-        function confirmarAsistencia(event) {
-            event.preventDefault(); // Evita que la página se recargue
+        // ACCIÓN PARA EL BOTÓN DE WHATSAPP
+        function confirmarPorWhatsApp(event) {
+            const form = document.getElementById('formulario-boda');
+            
+            // Verificamos que los campos obligatorios estén llenos antes de ir a WhatsApp
+            if (!form.checkValidity()) {
+                form.reportValidity(); // Muestra el error nativo ("Por favor, complete este campo")
+                return;
+            }
 
-            // 1. Obtenemos los datos que llenó el invitado
             const nombre = document.getElementById('nombre').value;
             const asistencia = document.getElementById('asistencia').value;
             const personas = document.getElementById('personas').value;
             
             // ---> AQUÍ PONES TU NÚMERO DE TELÉFONO <---
-            // Formato: Código de país (ej. 51 para Perú) seguido de tu número, sin el símbolo + y sin espacios
             const telefono = "51930851896"; 
             
-            // 2. Preparamos el mensaje
             let mensaje = "";
             if (asistencia === "si") {
                 mensaje = `¡Hola Jhon y Gabriela! 🎉 Soy *${nombre}* y quería confirmar nuestra asistencia a su boda. Seremos *${personas}* persona(s). ¡Qué emoción!`;
@@ -595,21 +774,8 @@
                 mensaje = `¡Hola Jhon y Gabriela! 😔 Soy *${nombre}*. Lamentablemente no podremos asistir a la boda. ¡Les deseamos lo mejor en su gran día!`;
             }
             
-            // 3. Creamos el link de WhatsApp
             const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            
-            // 4. Abrimos WhatsApp en una pestaña nueva
             window.open(urlWhatsApp, '_blank');
-            
-            // 5. Mostramos un mensaje bonito en la web diciendo que ya se envió
-            const form = document.getElementById('formulario-boda');
-            form.innerHTML = `
-                <div style="text-align: center; padding: 20px 0;">
-                    <span class="material-icons" style="font-size: 4rem; color: #C5A880; margin-bottom: 15px;">send</span>
-                    <h3 style="color: #C5A880; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0;">¡Enviando confirmación!</h3>
-                    <p style="color: #ffffff; margin-top: 15px; font-size: 1.1rem; line-height: 1.5;">Se está abriendo tu WhatsApp para enviarnos tu respuesta directamente.</p>
-                </div>
-            `;
         }
     </script>
 </body>
