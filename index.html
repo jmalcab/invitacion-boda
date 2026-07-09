@@ -62,7 +62,7 @@
             margin-top: 40px;
             font-style: italic;
             font-family: 'Playfair Display', serif;
-            color: rgba(197, 168, 128, 0.95);
+            color: rgba(197, 168, 128, 0.95); /* Champagne translúcido */
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -71,6 +71,64 @@
             .nombres {
                 font-size: 3rem;
             }
+        }
+
+        /* --- SECCIÓN FAMILIAS (Padres y Padrinos) --- */
+        .familias-seccion {
+            background-color: #ffffff; /* Fondo blanco limpio */
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .familias-seccion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #C5A880; /* Champagne */
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .familias-bloque {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .familias-nombres {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .familia-columna {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .familia-columna p {
+            font-size: 1.1rem;
+            color: #1A2436;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .familia-columna span {
+            display: block;
+            font-size: 0.85rem;
+            color: #6c7a89;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .separador-floral {
+            font-size: 1.5rem;
+            color: #C5A880;
+            margin: 30px 0;
+            opacity: 0.6;
         }
 
         /* --- SECCIÓN DE CUENTA REGRESIVA --- */
@@ -487,6 +545,38 @@
         <p class="mensaje">¡Nos casamos y queremos celebrarlo con ustedes!</p>
     </header>
 
+    <!-- Sección Nueva: Padres y Padrinos -->
+    <section class="familias-seccion">
+        <div class="familias-bloque">
+            <h2>Con la bendición de nuestros padres</h2>
+            <div class="familias-nombres">
+                <div class="familia-columna">
+                    <span>Padres de la Novia</span>
+                    <p>Remigio Tena Yacolca (†)</p>
+                    <p>Isabel Cordova Polo</p>
+                </div>
+                <div class="familia-columna">
+                    <span>Padres del Novio</span>
+                    <p>Jimmy Malca Becerra</p>
+                    <p>Milagros Del Rocío Baldera Moran</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="separador-floral">✧</div>
+
+        <div class="familias-bloque" style="margin-bottom: 0;">
+            <h2>Y la compañía de nuestros padrinos</h2>
+            <div class="familias-nombres">
+                <div class="familia-columna">
+                    <span>Padrinos de Boda</span>
+                    <p>César Espinoza Acosta</p>
+                    <p>Lliana Cordova Mejia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección 2: Cuenta Regresiva -->
     <section class="contador-seccion">
         <h2>Ya falta poco...</h2>
@@ -559,7 +649,7 @@
     <section class="rsvp-seccion">
         <h2>Confirmación de Asistencia</h2>
         <div id="saludo-personalizado" class="rsvp-greeting"></div>
-        <p>Por favor, confírmanos tu presencia antes del 15 de Septiembre.</p>
+        <p>Por favor, confírmanos tu presencia antes del 24 de Septiembre.</p>
         
         <!-- IMPORTANTE: Aquí se usa FormSubmit. Reemplaza "tu_correo@gmail.com" por tu correo real -->
         <form class="rsvp-formulario" id="formulario-boda" action="https://formsubmit.co/jhonmalcab@gmail.com" method="POST">
@@ -650,18 +740,18 @@
         }
 
         const textosFotos = {
-            'foto1.jpeg': 'El día que nuestras almas dijeron ¡Sí! 💍✨',
-            'foto2.jpeg': 'Nuestras primeras salidas, donde comenzó la magia ☕💫',
-            'foto3.jpeg': 'La promesa de un para siempre juntos 💍💖',
-            'foto4.jpeg': 'Nuestro primer viaje, el inicio de mil aventuras ✈️🌍',
-            'foto5.jpeg': 'Una escapada para bailar al ritmo de nuestro amor 💃🕺',
-            'foto6.jpeg': 'Donde aprendimos, crecimos y nos enamoramos 🎓📚',
-            'foto7.jpeg': '¡Reafirmando nuestro amor una vez más! ✨🥂',
-            'foto8.jpeg': 'La emoción antes de volar hacia nuevos recuerdos 🧳✈️',
-            'foto9.jpeg': 'El lugar que nos vio unir nuestros caminos 🏛️❤️',
-            'foto10.jpeg': 'Bailando juntos como si no hubiera un mañana 🎶✨',
-            'foto11.jpeg': 'Tardes de películas, abrazos y nuestro propio mundo 🍿🎬',
-            'foto12.jpeg': 'Nuestra primera semana escribiendo nuestro felices por siempre 🏡💍'
+            'foto1.JPEG': 'El día que nuestras almas dijeron ¡Sí! 💍✨',
+            'foto2.JPEG': 'Nuestras primeras salidas, donde comenzó la magia ☕💫',
+            'foto3.JPEG': 'La promesa de un para siempre juntos 💍💖',
+            'foto4.JPEG': 'Nuestro primer viaje, el inicio de mil aventuras ✈️🌍',
+            'foto5.JPEG': 'Una escapada para bailar al ritmo de nuestro amor 💃🕺',
+            'foto6.JPEG': 'Donde aprendimos, crecimos y nos enamoramos 🎓📚',
+            'foto7.JPEG': '¡Reafirmando nuestro amor una vez más! ✨🥂',
+            'foto8.JPEG': 'La emoción antes de volar hacia nuevos recuerdos 🧳✈️',
+            'foto9.JPEG': 'El lugar que nos vio unir nuestros caminos 🏛️❤️',
+            'foto10.JPEG': 'Bailando juntos como si no hubiera un mañana 🎶✨',
+            'foto11.JPEG': 'Tardes de películas, abrazos y nuestro propio mundo 🍿🎬',
+            'foto12.JPEG': 'Nuestra primera semana escribiendo nuestro felices por siempre 🏡💍'
         };
 
         for (let i = listaFotos.length - 1; i > 0; i--) {
